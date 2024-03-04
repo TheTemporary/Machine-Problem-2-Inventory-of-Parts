@@ -19,15 +19,6 @@ public class Transaction extends Inventory {
     CountRecords++;
   }
 
-  // public Boolean checkDuplicatePartNum(long partNumber) {
-  //     Boolean isNotDuplicate = true;
-  //     if (records[CountRecords].partNumber != partNumber) {
-  //       isNotDuplicate = false;
-  //      }
-
-  //     return isNotDuplicate;
-  // }
-
   // updating the inventory
   public Boolean updateRecordPrice(long partNumber, Float newPrice) {
     Boolean isChange = false;
@@ -62,7 +53,7 @@ public class Transaction extends Inventory {
     }
     return isChange;
   }
-
+  // The method iterates through the `records` array and checks if a record with a matching part number exists and is not marked as deleted.
   public Boolean findPartNum(long PartNum) {
     Boolean isFind = false;
     for (int i = 0; i < CountRecords; i++) {
@@ -72,7 +63,7 @@ public class Transaction extends Inventory {
     }
     return isFind;
   }
-  
+  // The method iterates through the `records` array and sets the `isDelete` flag to `true`
   public Boolean Delete(long PartNum) {
     Boolean isFind = false;
     for (int i = 0; i < CountRecords; i++) {
@@ -84,6 +75,7 @@ public class Transaction extends Inventory {
     return isFind;
   }
 
+  // this prints out inventory records in a tabular format, including part number, description, and price.
   public void displayAllRecords() {
     System.out.println("Inventory Records");
     System.out.println();
